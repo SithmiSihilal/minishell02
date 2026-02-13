@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siellage <siellage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:59:21 by glugo-mu          #+#    #+#             */
-/*   Updated: 2026/02/13 16:34:42 by siellage         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:01:02 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <readline/history.h>
 # include "libft.h"
 # include <signal.h>
-# include <readline/readline.h>
 
 # define ECHO 1
 # define CD 2
@@ -46,11 +45,11 @@ typedef struct s_split_ctx
 	int		end;
 }	t_split_ctx;
 
-typedef struct s_exp_ctx
+typedef struct s_expand_ctx
 {
 	char	**envp;
 	int		exit_status;
-}	t_exp_ctx;
+}	t_expand_ctx;
 
 typedef enum e_token_type
 {
@@ -219,6 +218,9 @@ void			runprocess(t_cmdlist *cmdlist, int *fd, int fdindex);
 void			waitall(void);
 void			free_core(t_core *core);
 
+char			*join_str_free(char *res, char *val);
+char			*join_char_free(char *res, char c);
+char			*handle_dollar(const char *str, size_t *i, char *res, t_expand_ctx *ctx);
 int				is_builtin(char *cmd);
 int				exec_builtin(char **args);
 int				ft_strcmp(const char *s1, const char *s2);

@@ -6,7 +6,7 @@
 /*   By: siellage <siellage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:33:28 by siellage          #+#    #+#             */
-/*   Updated: 2025/12/19 11:23:25 by siellage         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:41:24 by siellage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,15 @@
 void	runenv(t_core *core, t_cmdlist *cmdnode)
 {
 	t_env	*tempenv;
+	int		argc;
 
+	argc = getarraylen(cmdnode->path);
+	if (argc > 1)
+	{
+		print_error("env: ", "too many arguments\n", NULL);
+		core->exec_output = 1;
+		return ;
+	}
 	tempenv = core->env_table;
 	while (tempenv)
 	{

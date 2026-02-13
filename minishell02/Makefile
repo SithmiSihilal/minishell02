@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: siellage <siellage@student.42.fr>          +#+  +:+       +#+         #
+#    By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/11 18:10:13 by glugo-mu          #+#    #+#              #
-#    Updated: 2026/02/13 14:54:18 by siellage         ###   ########.fr        #
+#    Updated: 2026/02/13 16:45:37 by tkurukul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC =	src/main.c src/env/copy_env.c src/utils/utils.c \
 		src/libft/ft_putendl_fd.c src/libft/ft_putchar_fd.c src/libft/ft_substr.c \
 		src/libft/ft_strjoin.c src/libft/ft_strjoin_char.c src/libft/ft_strtrim.c \
 		src/libft/ft_split.c src/libft/ft_itoa.c src/libft/ft_striteri.c \
-		src/libft/ft_strmapi.c 
+		src/libft/ft_strmapi.c src/parsing/expand2_utils.c
 OBJDIR = obj
 OBJ = $(patsubst src/%.c,$(OBJDIR)/%.o,$(SRC))
 

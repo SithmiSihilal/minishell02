@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siellage <siellage@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 22:00:00 by glugo-mu          #+#    #+#             */
-/*   Updated: 2026/01/30 15:05:56 by siellage         ###   ########.fr       */
+/*   Updated: 2026/02/13 16:58:37 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-static char	*join_str_free(char *s1, char *s2)
-{
-	char	*result;
-
-	result = ft_strjoin(s1, s2);
-	free(s1);
-	free(s2);
-	return (result);
-}
-
-static char	*join_char_free(char *s, char c)
-{
-	char	*result;
-
-	result = ft_strjoin_char(s, c);
-	free(s);
-	return (result);
-}
 
 static char	*expand_var_in_line(char *line, char **envp, int exit_status)
 {
